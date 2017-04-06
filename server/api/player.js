@@ -49,7 +49,8 @@ playerRouter.delete('/:playerId', (req, res, next) => {
 });
 
 playerRouter.put('/:playerId/addTeam/:teamId', (req, res, next) => {
+  console.log('what is setTeam ', req.player.setTeam())
   req.player.setTeam(req.params.teamId)
-    .then(() => res.end())
+    .then(() => res.send('yep'))
     .catch(next);
 });
